@@ -1,0 +1,31 @@
+# ===== 依赖与构建产物 =====
+node_modules/
+dist/
+target/
+build/
+*.class
+
+# ===== 环境变量与密钥（绝不入库）=====
+.env
+.env.local
+application-local.yml
+
+# ===== 日志 =====
+*.log
+
+# ===== IDE / 编辑器 =====
+.idea/
+.vscode/
+.claude/
+.DS_Store
+
+# ===== 演示视频（约 12MB 不入库，后续用 B 站链接或 GitHub Release 补充，见 README）=====
+演示视频/
+
+# ===== 工具残留（代码现代化工具的工作目录，与项目无关）=====
+.github/modernize/
+cp.txt
+
+# ===== 操作系统 =====
+Thumbs.db
+desktop.ini
