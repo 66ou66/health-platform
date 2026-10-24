@@ -38,6 +38,7 @@ health_platform/
 └── health-platform-frontend/          # 前端应用（Vue 3 + Vite）
     ├── package.json                   # 依赖与脚本
     ├── vite.config.js                 # Vite 配置
+    ├── .env.example                   # 高德 JS API 环境变量样例（复制为 .env.local 填真实值，不入库）
     ├── index.html
     └── src/
         ├── api/                       # 接口请求封装（admin/patient/user/volunteer）
@@ -71,6 +72,8 @@ cd health-platform-frontend
 npm install
 npm run dev
 ```
+
+地图 / 定位功能需要配置高德 JS API 凭据：把 `health-platform-frontend/.env.example` 复制为同目录 `.env.local`（已加入 .gitignore，不入库），填入 `VITE_AMAP_KEY`（Web端(JS API) 类型 Key）与 `VITE_AMAP_SECURITY_CODE`（配对安全密钥）。未配置时地图相关功能不可用，其余功能不受影响。
 
 ## 角色说明
 

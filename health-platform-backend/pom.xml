@@ -16,6 +16,8 @@
 
 	<properties>
 		<java.version>21</java.version>
+		<!-- 覆盖 Spring Boot 3.2.5 托管的 1.18.32：新版本才支持 JDK 23+ 上默认关闭注解处理后的 Lombok 运行 -->
+		<lombok.version>1.18.38</lombok.version>
 	</properties>
 
 	<dependencies>
@@ -75,6 +77,14 @@
 
 	<build>
 		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<!-- JDK 23+ 的 javac 默认不再执行类路径上的注解处理器，必须显式开启，否则 Lombok 不生效 -->
+					<proc>full</proc>
+				</configuration>
+			</plugin>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
